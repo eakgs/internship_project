@@ -128,3 +128,32 @@ az redis show \
     Action taken: Requested subscription-owner to register the provider in Portal under Subscriptions → Resource providers → Microsoft.SignalRService → Register.
 
 ![alt text](signalr_activitylog.png)
+
+## 6. Azure OpenAI
+    What I read / watched
+
+       Quickstart: Azure OpenAI (https://aka.ms/openai-docs)
+
+    Key takeaways:
+        Deploy and consume OpenAI models in Azure.
+        Manage deployments via Azure CLI or SDK.
+
+Commands run
+# List deployments
+az cognitiveservices account deployment list \
+  --resource-group Enadoc_Internship \
+  --name enadoc-openai-internship \
+  --query "[].{name:name,model:properties.model}" -o table
+# → shows "gpt-4o"
+
+# Fetch endpoint & key
+$ENDPOINT = az cognitiveservices account show --resource-group Enadoc_Internship --name enadoc-openai-internship --query properties.endpoint -o tsv
+$KEY      = az cognitiveservices account keys list --resource-group Enadoc_Internship --name enadoc-openai-internship --query key1 -o tsv
+
+# Test GPT-4o completion
+curl "$ENDPOINT/openai/deployments/gpt-4o/completions?api-version=2023-05-15" \
+  -H "api-key: $KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"prompt":"Hello, world!","max_tokens":5}'
+
+![alt text](azure_openai.png)
