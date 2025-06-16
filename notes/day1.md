@@ -23,7 +23,7 @@ Name               Location       Status
 -----------------  -------------  ---------
 Enadoc_Internship  southeastasia  Succeeded
 ```
-![alt text](grouplist.png)
+![alt text](../notes/day1_screenshots/grouplist.png)
 
 
 ## 2. Azure Key Vault
@@ -63,7 +63,7 @@ az keyvault secret show \
 vault name confirmed: enadocintership
 Scret BlobConnStr created successfully and value verified.
 
-![alt text](azure_keyvault.png)
+![alt text](../notes/day1_screenshots/azure_keyvault.png)
 
 
 
@@ -92,8 +92,8 @@ az redis show \
   --query provisioningState -o tsv
 
 # → Succeeded
-![alt text](azure_rediscache.png)
-![alt text](azure_rediscache_activitylog.png)
+![alt text](../notes/day1_screenshots/azure_rediscache.png)
+![alt text](../notes/day1_screenshots/azure_rediscache_activitylog.png)
 
 
 ## 4. Azure Blob Storage
@@ -111,7 +111,7 @@ az redis show \
 
         Clicked Upload, selected hello.txt, clicked Upload.
 
-![alt text](blobstorage_container.png)
+![alt text](../notes/day1_screenshots/blobstorage_container.png)
 
 ## 5. Azure SignalR Service
     What I read / watched  
@@ -127,7 +127,7 @@ az redis show \
 
     Action taken: Requested subscription-owner to register the provider in Portal under Subscriptions → Resource providers → Microsoft.SignalRService → Register.
 
-![alt text](signalr_activitylog.png)
+![alt text](../notes/day1_screenshots/signalr_activitylog.png)
 
 ## 6. Azure OpenAI
     What I read / watched
@@ -156,4 +156,4 @@ curl "$ENDPOINT/openai/deployments/gpt-4o/completions?api-version=2023-05-15" \
   -H "Content-Type: application/json" \
   -d '{"prompt":"Hello, world!","max_tokens":5}'
 
-![alt text](azure_openai.png)
+![alt text](../notes/day1_screenshots/azure_openai.png)
