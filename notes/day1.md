@@ -113,6 +113,8 @@ az redis show \
 
 ![alt text](../notes/day1_screenshots/blobstorage_container.png)
 
+![alt text](../notes/day1_screenshots/hello.png)
+
 ## 5. Azure SignalR Service
     What I read / watched  
              
